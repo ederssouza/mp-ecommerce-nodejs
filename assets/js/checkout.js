@@ -31,9 +31,17 @@
 
     window.axios.post(url, renderPaylod())
       .then(function (response) {
-        console.log(response)
+        redirectToCheckout(response.data.init_point)
       }).catch(function (error) {
         console.log(error)
       })
+  }
+
+  function redirectToCheckout (href) {
+    const $a = document.createElement('a')
+    $a.href = href
+    $a.target = '_blank'
+    $a.click()
+    $a.remove()
   }
 })()
