@@ -1,22 +1,25 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
-var port = process.env.PORT || 3000
+'use strict'
 
-var app = express();
- 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+const express = require('express')
+const exphbs = require('express-handlebars')
+const { join } = require('path')
 
-app.use(express.static('assets'));
- 
-app.use('/assets', express.static(__dirname + '/assets'));
+const port = process.env.PORT || 3000
+const app = express()
+
+app.engine('handlebars', exphbs())
+app.set('view engine', 'handlebars')
+
+app.use(express.static('assets'))
+
+app.use('/assets', express.static(join(__dirname, 'assets')))
 
 app.get('/', function (req, res) {
-    res.render('home');
-});
+  res.render('home')
+})
 
 app.get('/detail', function (req, res) {
-    res.render('detail', req.query);
-});
+  res.render('detail', req.query)
+})
 
-app.listen(port);
+app.listen(port)
