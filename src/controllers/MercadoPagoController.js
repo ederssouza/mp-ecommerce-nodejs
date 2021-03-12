@@ -1,10 +1,14 @@
 'use strict'
 
+function renderPayload (body) {
+  const { id, img, title, price, unit } = body
+  return { id, img, title, price, unit }
+}
+
 class MercadoPagoController {
   store (req, res) {
     try {
-      const { id, img, title, price, unit } = req.body
-      return res.json({ id, img, title, price, unit })
+      return res.json(renderPayload(req.body))
     } catch (error) {
       const { status: code, message } = error
       return res.status(status).json({
