@@ -68,7 +68,7 @@
                 <h3>{{ unit }}</h3>
               </div>
 
-              <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+              <button type="button" class="mercadopago-button" formmethod="post" data-js="payment-button">Pagar</button>
             </div>
           </div>
         </div>
@@ -78,3 +78,5 @@
 </div>
 
 <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/assets/js/checkout.js"></script>
