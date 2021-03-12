@@ -19,6 +19,9 @@ app.use('/assets', express.static(join(__dirname, 'assets')))
 // handlebars views
 app.get('/', (req, res) => res.render('home'))
 app.get('/detail', (req, res) => res.render('detail', req.query))
+app.get('/checkout/pagamento-rejeitado', (req, res) => res.render('payment-rejected', req.query))
+app.get('/checkout/pagamento-pendente', (req, res) => res.render('pending-payment', req.query))
+app.get('/checkout/pagamento-aprovado', (req, res) => res.render('payment-accept', req.query))
 
 // mercado pago
 app.get('/api/v1/mercadopago/index', MercadoPagoController.index)
