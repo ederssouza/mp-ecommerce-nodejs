@@ -15,7 +15,6 @@ module.exports = {
     const { id, img, title, price, unit } = body
 
     return {
-      collector_id: Number(process.env.MERCADO_PAGO_COLLECTOR_ID),
       items: [
         {
           id,
