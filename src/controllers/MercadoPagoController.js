@@ -41,7 +41,7 @@ class MercadoPagoController {
 
   update (req, res) {
     const notification = { ...req.body }
-    console.log(notification)
+    console.log(JSON.stringify(notification))
     return res.json(notification)
   }
 }
