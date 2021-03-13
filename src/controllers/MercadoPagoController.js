@@ -5,6 +5,22 @@ const { isValidObject } = require('../utils/helpers')
 const { mercadoPagoInit, renderPayload } = require('../utils/mercadoPago')
 
 class MercadoPagoController {
+  async show (req, res) {
+    try {
+      await mercadoPagoInit()
+      const orderId = req.params.id
+
+      if (!orderId) {
+        return res.status(400).json({ error: 'Order id is required' })
+      }
+
+      const { body } = await mercadopago.payment.get(orderId)
+      return res.json(body)
+    } catch (error) {
+      return res.json(error)
+    }
+  }
+
   async store (req, res) {
     try {
       await mercadoPagoInit()
