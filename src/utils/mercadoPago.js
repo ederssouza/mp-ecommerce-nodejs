@@ -63,7 +63,7 @@ module.exports = {
       notification_url: 'https://ederssouza-mp-ecommerce-nodejs.herokuapp.com/api/v1/mercadopago/notifications',
       // notification_url: 'https://webhook.site/3710f3f0-5853-4892-a828-cb548cb05b1f',
       statement_descriptor: 'Tienda e-commerce',
-      external_reference: 'teste@outlook.com.br' // TO DO
+      external_reference: 'edersampaio@outlook.com.br' // TO DO
     }
   }
 }
