@@ -11,7 +11,7 @@
 
   function renderPaylod () {
     const id = getUrlParam('id') ? Number(getUrlParam('id')) : null
-    const img = getUrlParam('img') ? location.origin + getUrlParam('img') : null
+    const img = getUrlParam('img') ? location.origin + '/assets/img/' + getUrlParam('img') : null
     const title = getUrlParam('title') || null
     const price = getUrlParam('price') ? Number(getUrlParam('price')) : null
     const unit = getUrlParam('unit') ? Number(getUrlParam('unit')) : null
@@ -40,6 +40,7 @@
   function redirectToCheckout (href) {
     const $a = document.createElement('a')
     $a.href = href
+    $a.target = '_blank'
     $a.click()
     $a.remove()
   }
