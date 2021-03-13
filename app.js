@@ -29,5 +29,6 @@ app.get('/checkout/pagamento-aprovado', (req, res) => res.render('payment-accept
 // mercado pago
 app.post('/api/v1/mercadopago/create', MercadoPagoController.store)
 app.post('/api/v1/mercadopago/notifications', MercadoPagoController.update)
+app.get('/api/v1/mercadopago/payments/:id?', MercadoPagoController.show)
 
 app.listen(port)
