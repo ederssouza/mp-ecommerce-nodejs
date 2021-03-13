@@ -7,8 +7,8 @@ module.exports = {
     await mercadopago.configure({
       sandbox: true,
       access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
-      integrator_id: process.env.MERCADO_PAGO_INTEGRATOR_ID,
-      'x-integrator-id': process.env.MERCADO_PAGO_INTEGRATOR_ID
+      integrator_id: process.env.MERCADO_PAGO_INTEGRATOR_ID
+      // 'x-integrator-id': process.env.MERCADO_PAGO_INTEGRATOR_ID
     })
   },
 
