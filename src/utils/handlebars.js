@@ -8,11 +8,7 @@ const partialsDir = join(__dirname, '..', '..', 'views', 'partials')
 const filenames = fs.readdirSync(partialsDir)
 
 Handlebars.registerHelper('ifvalue', function (conditional, options) {
-  if (options.hash.value === conditional) {
-    return options.fn(this)
-  } else {
-    return options.inverse(this)
-  }
+  return options.hash.value === conditional ? options.fn(this) : options.inverse(this)
 })
 
 filenames.forEach(function (filename) {
