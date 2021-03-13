@@ -4,6 +4,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const { join } = require('path')
 require('dotenv/config')
+require('./src/utils/handlebars')
 
 const MercadoPagoController = require('./src/controllers/MercadoPagoController')
 
