@@ -1,0 +1,125 @@
+        <div class="as-searchnav-placeholder" style="height: 77px;">
+          <div class="row as-search-navbar" id="as-search-navbar" style="width: auto;">
+            <div class="as-accessories-filter-tile column large-6 small-3">
+              <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
+                <h2 class="as-filter-button-text">Detalhamento do pedido</h2>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="as-accessories-results as-search-desktop">
+          <div class="width:60%">
+            <div class="as-producttile-info" style="float:left;min-height: 168px;">
+              <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+                <div class="as-producttile-title">
+                  <h3 class="as-producttile-name">
+                    Pedido #{{ payment_id }}
+                  </h3>
+                </div>
+
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>ID</th>
+                      <td>{{ payment_id }}</td>
+                    </tr>
+                    <tr>
+                      <th>Status</th>
+                      <td>
+                        {{#ifvalue status value="pending"}}
+                          <strong class="label label--warning">Pendente</strong><br>
+                          O usuário ainda não concluiu o processo de pagamento.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="approved"}}
+                          <strong class="label label--success">Aprovado</strong><br>
+                          O pagamento foi aprovado e credenciado.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="authorized"}}
+                          <strong class="label label--success">Autorizado</strong><br>
+                          O pagamento foi autorizado, mas ainda não foi capturado.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="in_process"}}
+                          <strong class="label label--warning">Em processo</strong><br>
+                          O pagamento está sendo revisado.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="in_mediation"}}
+                          <strong class="label label--default">Em mediação</strong><br>
+                          Os usuários iniciaram uma disputa.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="rejected"}}
+                          <strong class="label label--danger">Rejeitado</strong><br>
+                          O pagamento foi rejeitado. O usuário pode tentar o pagamento novamente.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="cancelled"}}
+                          <strong class="label label--danger">Cancelado</strong><br>
+                          O pagamento foi cancelado por uma das partes ou porque o prazo de pagamento expirou.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="refunded"}}
+                          <strong class="label label--info">Reembolsado</strong><br>
+                          O pagamento foi devolvido ao usuário.
+                        {{/ifvalue}}
+
+                        {{#ifvalue status value="charged_back"}}
+                          <strong class="label label--primary">Estornado</strong><br>
+                          Foi feito um estorno no cartão de crédito do comprador.
+                        {{/ifvalue}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Método de pagamento</th>
+                      <td>
+                        {{#ifvalue payment_type value="account_money"}}
+                          <strong>Dinheiro da conta</strong><br>
+                          Dinheiro na conta do Mercado Pago.
+                        {{/ifvalue}}
+
+                        {{#ifvalue payment_type value="ticket"}}
+                          <strong>Boleto</strong><br>
+                          Boleto impresso.
+                        {{/ifvalue}}
+
+                        {{#ifvalue payment_type value="bank_transfer"}}
+                          <strong>Transferência bancária</strong><br>
+                          Transferência bancária.
+                        {{/ifvalue}}
+
+                        {{#ifvalue payment_type value="atm"}}
+                          <strong>Auto atendimento</strong><br>
+                          Pagamento por caixa eletrônico.
+                        {{/ifvalue}}
+
+                        {{#ifvalue payment_type value="credit_card"}}
+                          <strong>Cartão de crédito</strong><br>
+                          Pagamento por cartão de crédito.
+                        {{/ifvalue}}
+
+                        {{#ifvalue payment_type value="debit_card"}}
+                          <strong>Cartão de débito</strong><br>
+                          Pagamento por cartão de débito.
+                        {{/ifvalue}}
+
+                        {{#ifvalue payment_type value="prepaid_card"}}
+                          <strong>Cartão pré-pago</strong><br>
+                          Pagamento por cartão pré-pago.
+                        {{/ifvalue}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Preference ID</th>
+                      <td>{{ preference_id }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
