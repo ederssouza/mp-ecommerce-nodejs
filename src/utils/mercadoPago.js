@@ -18,11 +18,11 @@ module.exports = {
     return {
       items: [
         {
-          id,
+          id: 1234,
           title,
           currency_id: 'BRL',
           picture_url: img,
-          description: title,
+          description: 'Celular de Tienda e-commerce',
           category_id: 'mobile',
           quantity: unit,
           unit_price: price
@@ -38,7 +38,7 @@ module.exports = {
         },
         identification: {
           type: 'CPF',
-          number: '27482519033'
+          number: '21634800036'
         },
         address: {
           street_name: 'Insurgentes Sur',
@@ -63,7 +63,7 @@ module.exports = {
       notification_url: 'https://ederssouza-mp-ecommerce-nodejs.herokuapp.com/api/v1/mercadopago/notifications',
       // notification_url: 'https://webhook.site/3710f3f0-5853-4892-a828-cb548cb05b1f',
       statement_descriptor: 'Tienda e-commerce',
-      external_reference: 'edersampaio@outlook.com.br' // TO DO
+      external_reference: 'edersampaio@outlook.com.br'
     }
   }
 }
