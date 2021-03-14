@@ -29,6 +29,12 @@ class MercadoPagoController {
       const response = await mercadopago.preferences.create(payload)
       const data = response && isValidObject(response.body) ? response.body : {}
 
+      console.log(JSON.stringify({
+        init_point: response.body.init_point,
+        sandbox_init_point: response.body.sandbox_init_point,
+        body: data
+      }))
+
       return res.json({
         init_point: response.body.init_point,
         sandbox_init_point: response.body.sandbox_init_point,
